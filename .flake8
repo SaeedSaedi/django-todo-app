@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 88
+ignore = E266,F401,W503,E501,F811
+exclude = .git, __pycache__, venv, messages.py,.idea,build,dist,.pytest_cache,.venv,static,templates,nginx,logs,uploads,.gitignore,README.md,requirements.txt
