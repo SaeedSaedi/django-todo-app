@@ -1,0 +1,6 @@
+html,body{
+    height: 100vh;
+}
+body{
+    background-image: repeating-linear-gradient(to top,#7025e4,#e5b2ca 100%);
+}
