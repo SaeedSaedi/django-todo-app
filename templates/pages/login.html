@@ -1,16 +1,11 @@
 {% extends "inc/base.html" %}
 {% load static %}
 {% block content %}
-<div class="h-100 d-flex justify-content-center align-items-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 mx-auto">
-        <div class="text-center position-relative">
-            <img class="rounded-circle p-2 w-25 position-absolute top-0 start-50 translate-middle"  src="{% static 'asset/user.png' %}" alt="" />
-        </div>
-      </div>
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center my-5">
+    <div class="col-lg-5 mx-auto p-5 bg-white rounded shadow-lg">
+    <div class="text-center position-relative">
+        <img class="rounded-circle p-2 position-absolute translate-middle negative-top width-100"  src="{% static 'asset/user.png' %}" alt="" />
     </div>
-    <div class="col-lg-6 mx-auto p-5 bg-white rounded shadow-lg">
       <h3 class="mb-2 text-center pt-5">Sign In</h3>
       <p class="text-center lead">Sign in to manage your tasks</p>
       <form action="">
@@ -26,5 +21,4 @@
       </form>
     </div>
   </div>
-</div>
 {% endblock %}
