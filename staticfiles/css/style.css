@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 html,body{
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 body{
     background-image: repeating-linear-gradient(to top, #7025e4, #e5b2ca 100%);
@@ -12,4 +15,120 @@ body{
 }
 .width-100{
     width: 120px;
+}
+
+.modern-card {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styling */
+.modern-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.bg-todo {
+    background: #5a67d8;
+}
+
+.bg-doing {
+    background: #48bb78;
+}
+
+.bg-done {
+    background: #38b2ac;
+}
+
+/* Task List Styling */
+.modern-list {
+    padding: 1rem;
+    min-height: 180px;
+    background: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.modern-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-task:hover {
+    background: #edf2f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    transition: color 0.2s ease;
+}
+
+.btn-delete:hover {
+    color: #c53030;
+}
+
+/* Footer and Input Styling */
+.modern-footer {
+    background: #edf2f7;
+    padding: 1rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.modern-input {
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    padding: 0.5rem;
+    flex-grow: 1;
+    font-size: 0.9rem;
+}
+
+.modern-input:focus {
+    border-color: #5a67d8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.3);
+}
+
+.modern-btn {
+    background: #5a67d8;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.modern-btn:hover {
+    background: #434190;
+}
+
+.modern-btn i {
+    margin-right: 0.3rem;
 }
