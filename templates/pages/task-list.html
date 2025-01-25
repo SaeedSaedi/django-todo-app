@@ -1,54 +1,126 @@
-{% extends "inc/base.html" %}
-{% load static %}
-
-{% block content %}
+{% extends "inc/base.html" %} {% load static %} {% block content %}
 <div class="flex-grow-1 d-flex justify-content-center align-items-center my-5">
-    <div class="container">
-        <div class="row gy-4">
-            <!-- To Do Column -->
-            <div class="col-md-4">
-                <div class="card modern-card shadow-sm">
-                    <div class="card-header modern-header bg-todo text-center">
-                        <i class="fas fa-tasks me-2"></i>To Do
-                    </div>
-                    <ul id="todo" class="list-group list-group-flush modern-list">
-                        <!-- Tasks will be added dynamically -->
-                    </ul>
-                    <div class="card-footer modern-footer">
-                        <div class="input-group">
-                            <input type="text" id="newTask" class="form-control modern-input" placeholder="Add a new task">
-                            <button onclick="addTask()" class="btn modern-btn">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row gy-4">
+      <!-- To Do Column -->
+      <div class="col-md-4">
+        <div class="card modern-card shadow-sm">
+          <div class="card-header modern-header bg-todo text-center">
+            <i class="fas fa-tasks me-2"></i>To Do
+          </div>
+          <ul id="todo" class="list-group list-group-flush modern-list">
+            {% for task in tasks_todo %}
+            <li
+              class="list-group-item modern-task d-flex justify-content-between align-items-center"
+              data-task-id="{{ task.id }}"
+            >
+              <span class="task-text">{{ task.title }}</span>
+              <div>
+                <button
+                  class="btn btn-sm btn-edit me-1"
+                  onclick="editTask(this)"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-delete"
+                  onclick="deleteTask(this)"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="card-footer modern-footer">
+            <div class="input-group">
+              <input
+                type="text"
+                id="newTask"
+                class="form-control modern-input"
+                placeholder="Add a new task"
+              />
+              <button onclick="addTask()" class="btn modern-btn">
+                <i class="fas fa-plus"></i>
+              </button>
             </div>
-
-            <!-- Doing Column -->
-            <div class="col-md-4">
-                <div class="card modern-card shadow-sm">
-                    <div class="card-header modern-header bg-doing text-center">
-                        <i class="fas fa-spinner me-2"></i>Doing
-                    </div>
-                    <ul id="doing" class="list-group list-group-flush modern-list"></ul>
-                </div>
-            </div>
-
-            <!-- Done Column -->
-            <div class="col-md-4">
-                <div class="card modern-card shadow-sm">
-                    <div class="card-header modern-header bg-done text-center">
-                        <i class="fas fa-check-circle me-2"></i>Done
-                    </div>
-                    <ul id="done" class="list-group list-group-flush modern-list"></ul>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Doing Column -->
+      <div class="col-md-4">
+        <div class="card modern-card shadow-sm">
+          <div class="card-header modern-header bg-doing text-center">
+            <i class="fas fa-spinner me-2"></i>Doing
+          </div>
+          <ul id="doing" class="list-group list-group-flush modern-list">
+            {% for task in tasks_doing %}
+            <li
+              class="list-group-item modern-task d-flex justify-content-between align-items-center"
+              data-task-id="{{ task.id }}"
+            >
+              <span class="task-text">{{ task.title }}</span>
+              <div>
+                <button
+                  class="btn btn-sm btn-edit me-1"
+                  onclick="editTask(this)"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-delete"
+                  onclick="deleteTask(this)"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Done Column -->
+      <div class="col-md-4">
+        <div class="card modern-card shadow-sm">
+          <div class="card-header modern-header bg-done text-center">
+            <i class="fas fa-check-circle me-2"></i>Done
+          </div>
+          <ul id="done" class="list-group list-group-flush modern-list">
+            {% for task in tasks_done %}
+            <li
+              class="list-group-item modern-task d-flex justify-content-between align-items-center"
+              data-task-id="{{ task.id }}"
+            >
+              <span class="task-text">{{ task.title }}</span>
+              <div>
+                <button
+                  class="btn btn-sm btn-edit me-1"
+                  onclick="editTask(this)"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  class="btn btn-sm btn-delete"
+                  onclick="deleteTask(this)"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
+<!-- Include SortableJS -->
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
 {% endblock %}
