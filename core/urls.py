@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("accounts.urls")),
-    # path("task", include("taskmanager.urls")),
+    path("task/", include("taskmanager.urls")),
 ]
 
 if settings.DEBUG:
