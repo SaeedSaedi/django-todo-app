@@ -134,3 +134,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'taskmanager:task-list'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
