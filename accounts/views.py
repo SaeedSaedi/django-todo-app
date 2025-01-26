@@ -53,3 +53,11 @@ class RegisterView(FormView):
 
 class ForgetPasswordView(TemplateView):
     template_name = "pages/forget-password.html"
+
+
+class AboutView(TemplateView):
+    template_name = "pages/about.html"
+
+
+class ContactView(TemplateView):
+    template_name = "pages/contact.html"

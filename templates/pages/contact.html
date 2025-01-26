@@ -1,0 +1,82 @@
+{% extends "inc/base.html" %}
+{% load static %}
+{% block title %}
+Tasker - Contact Us
+{% endblock %}
+{% block content %}
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center my-5">
+    <div class="col-lg-8 mx-auto p-5 bg-white rounded shadow-lg">
+      <div class="text-center position-relative">
+        <img class="rounded-circle p-2 position-absolute translate-middle negative-top width-100" src="{% static 'asset/contact.png' %}" alt="Tasker Logo" />
+      </div>
+      <h3 class="mb-4 text-center pt-5">Contact Us</h3>
+      <p class="text-center lead">We're here to help! Reach out to us for any questions, feedback, or support.</p>
+
+      <!-- Introduction Section -->
+      <section class="mb-5">
+        <h4 class="mb-3">How Can We Help You?</h4>
+        <p class="text-muted">
+          At Tasker, we value your feedback and are committed to providing the best support. Whether you have a question about our features, need assistance with your account, or want to share your thoughts, we're just a message away.
+        </p>
+      </section>
+
+      <!-- Contact Information Section -->
+      <section class="mb-5">
+        <h4 class="mb-3">Contact Information</h4>
+        <ul class="list-unstyled text-muted">
+          <li class="mb-3">
+            <i class="fas fa-envelope me-2"></i>
+            <strong>Email:</strong> saeed.saedi.s@gmail.com
+          </li>
+          <li class="mb-3">
+            <i class="fas fa-phone me-2"></i>
+            <strong>Phone:</strong> +98 9151097710
+          </li>
+        </ul>
+      </section>
+
+      <!-- FAQs Section (Optional) -->
+      <section class="mb-5">
+        <h4 class="mb-3">Frequently Asked Questions</h4>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How do I reset my password?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                You can reset your password by clicking on the "Forgot Password" link on the login page. Follow the instructions sent to your email.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Can I use Tasker for free?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, Tasker offers a free plan with basic features. You can upgrade to a premium plan for additional features.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How do I contact support?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                You can reach out to us via email at saeed.saedi.s@gmail.com or use the contact form above.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>   
+    </div>
+  </div>
+{% endblock %}
