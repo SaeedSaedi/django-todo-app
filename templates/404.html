@@ -1,0 +1,27 @@
+{% extends "inc/base.html" %}
+{% load static %}
+{% block title %}
+Page Not Found - Tasker
+{% endblock %}
+{% block content %}
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center my-5">
+    <div class="col-lg-8 mx-auto p-5 bg-white rounded shadow-lg text-center">
+      <!-- 404 Icon or Image -->
+      <div class="text-center position-relative">
+        <img class="rounded-circle p-2 position-absolute translate-middle negative-top width-100" src="{% static 'asset/404.png' %}" alt="Tasker Logo" />
+      </div>
+
+      <!-- 404 Heading -->
+      <h3 class="mb-4 text-center pt-5">Page Not Found</h3>
+
+      <!-- Error Message -->
+      <p class="lead text-muted">
+        Oops! The page you're looking for doesn't exist or has been moved.
+      </p>
+      <p class="text-muted">
+        Please check the URL or go back to the <a href="{% url 'accounts:login' %}" class="text-primary">Login page</a>.
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

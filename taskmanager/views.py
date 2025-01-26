@@ -56,6 +56,7 @@ class TaskUpdateView(View):
 
 
 # Task List View
+@method_decorator(login_required, name="dispatch")
 class TaskListView(TemplateView):
     template_name = "pages/task-list.html"
 
