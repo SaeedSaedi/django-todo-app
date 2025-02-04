@@ -44,4 +44,5 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
+    path("api/v1/", include("accounts.api.v1.urls")),
 ]
