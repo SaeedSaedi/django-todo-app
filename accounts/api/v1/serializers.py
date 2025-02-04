@@ -27,3 +27,16 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        user = authenticate(username=data["email"], password=data["password"])
+        if not user:
+            raise serializers.ValidationError("Invalid credentials")
+        return {"user": user}
+
+
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField()
