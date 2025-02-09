@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "taskmanager.apps.TaskmanagerConfig",
     "drf_spectacular",
-
 ]
 
 MIDDLEWARE = [
@@ -153,7 +152,6 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
 }
-
 
 
 SPECTACULAR_SETTINGS = {
