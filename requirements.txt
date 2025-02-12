@@ -4,12 +4,16 @@ Django==5.1.4
 djangorestframework==3.15.2
 djangorestframework_simplejwt==5.4.0
 drf-spectacular==0.28.0
+flake8==7.1.1
 inflection==0.5.1
 iniconfig==2.0.0
 jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
+mccabe==0.7.0
 packaging==24.2
 pluggy==1.5.0
+pycodestyle==2.12.1
+pyflakes==3.2.0
 PyJWT==2.10.1
 pytest==8.3.4
 pytest-django==4.9.0
