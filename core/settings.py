@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "taskmanager.apps.TaskmanagerConfig",
     "drf_spectacular",
+    "django_celery_beat",
 ]
 
 MIDDLEWARE = [
@@ -161,4 +162,9 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Manage your task using tasker",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
+}
+
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_BEAT_SCHEDULE = {
+    "delete_task": {"task": "taskmanager.tasks.delete_completed_tasks", "schedule": 600}
 }
